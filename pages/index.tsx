@@ -58,7 +58,7 @@ const Home: NextPage = () => {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          height={"80vh"}
+          height={"70vh"}
           position="relative"
         >
           <Slide in={slide == 0} direction="right">
@@ -138,7 +138,7 @@ const Home: NextPage = () => {
         </Stack>
         <Box
           display={"flex"}
-          height="20vh"
+          height="30vh"
           alignItems="center"
           justifyContent={"center"}
         >
@@ -148,6 +148,7 @@ const Home: NextPage = () => {
             onClick={() => setSlide((prev) => (prev + 1) % 4)}
           >
             <ChevronLeft
+              fontSize="large"
               style={{
                 transform: `rotate(180deg)`,
               }}
