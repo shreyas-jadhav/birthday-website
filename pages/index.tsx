@@ -6,12 +6,19 @@ import Box from "@mui/material/Box";
 import Link from "../src/Link";
 import ProTip from "../src/ProTip";
 import Copyright from "../src/Copyright";
-import { Avatar, Button, Slide, Stack } from "@mui/material";
+import { Avatar, Button, LinearProgress, Slide, Stack } from "@mui/material";
 import { ChevronLeft } from "@mui/icons-material";
 import Image from "next/image";
 
 const Home: NextPage = () => {
   const [slide, setSlide] = React.useState(0);
+  const [loaded, setLoaded] = React.useState(false);
+  React.useEffect(() => {
+    fetch(`/4s.gif`).then(() => setLoaded(true));
+  }, []);
+
+  if (!loaded) return <LinearProgress />;
+
   return (
     <Box>
       <Box
