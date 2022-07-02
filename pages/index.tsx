@@ -13,11 +13,6 @@ import Image from "next/image";
 const Home: NextPage = () => {
   const [slide, setSlide] = React.useState(0);
   const [loaded, setLoaded] = React.useState(false);
-  React.useEffect(() => {
-    fetch(`/4s.gif`).then(() => setLoaded(true));
-  }, []);
-
-  if (!loaded) return <LinearProgress />;
 
   return (
     <Box>
@@ -28,7 +23,7 @@ const Home: NextPage = () => {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
-          background: `url(/4s.gif)`,
+          background: `url(/bg.png)`,
           backgroundSize: "cover",
           zIndex: 1,
           position: "fixed",
